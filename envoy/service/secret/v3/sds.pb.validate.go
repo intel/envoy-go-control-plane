@@ -35,6 +35,214 @@ var (
 	_ = sort.Sort
 )
 
+// Validate checks the field values on CsrAndQuoteRequest with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the first error encountered is returned, or nil if there are no violations.
+func (m *CsrAndQuoteRequest) Validate() error {
+	return m.validate(false)
+}
+
+// ValidateAll checks the field values on CsrAndQuoteRequest with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the result is a list of violation errors wrapped in
+// CsrAndQuoteRequestMultiError, or nil if none found.
+func (m *CsrAndQuoteRequest) ValidateAll() error {
+	return m.validate(true)
+}
+
+func (m *CsrAndQuoteRequest) validate(all bool) error {
+	if m == nil {
+		return nil
+	}
+
+	var errors []error
+
+	// no validation rules for Csr
+
+	if len(errors) > 0 {
+		return CsrAndQuoteRequestMultiError(errors)
+	}
+
+	return nil
+}
+
+// CsrAndQuoteRequestMultiError is an error wrapping multiple validation errors
+// returned by CsrAndQuoteRequest.ValidateAll() if the designated constraints
+// aren't met.
+type CsrAndQuoteRequestMultiError []error
+
+// Error returns a concatenation of all the error messages it wraps.
+func (m CsrAndQuoteRequestMultiError) Error() string {
+	var msgs []string
+	for _, err := range m {
+		msgs = append(msgs, err.Error())
+	}
+	return strings.Join(msgs, "; ")
+}
+
+// AllErrors returns a list of validation violation errors.
+func (m CsrAndQuoteRequestMultiError) AllErrors() []error { return m }
+
+// CsrAndQuoteRequestValidationError is the validation error returned by
+// CsrAndQuoteRequest.Validate if the designated constraints aren't met.
+type CsrAndQuoteRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e CsrAndQuoteRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e CsrAndQuoteRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e CsrAndQuoteRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e CsrAndQuoteRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e CsrAndQuoteRequestValidationError) ErrorName() string {
+	return "CsrAndQuoteRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e CsrAndQuoteRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sCsrAndQuoteRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = CsrAndQuoteRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = CsrAndQuoteRequestValidationError{}
+
+// Validate checks the field values on CsrAndQuoteResponse with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the first error encountered is returned, or nil if there are no violations.
+func (m *CsrAndQuoteResponse) Validate() error {
+	return m.validate(false)
+}
+
+// ValidateAll checks the field values on CsrAndQuoteResponse with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the result is a list of violation errors wrapped in
+// CsrAndQuoteResponseMultiError, or nil if none found.
+func (m *CsrAndQuoteResponse) ValidateAll() error {
+	return m.validate(true)
+}
+
+func (m *CsrAndQuoteResponse) validate(all bool) error {
+	if m == nil {
+		return nil
+	}
+
+	var errors []error
+
+	// no validation rules for Certificate
+
+	if len(errors) > 0 {
+		return CsrAndQuoteResponseMultiError(errors)
+	}
+
+	return nil
+}
+
+// CsrAndQuoteResponseMultiError is an error wrapping multiple validation
+// errors returned by CsrAndQuoteResponse.ValidateAll() if the designated
+// constraints aren't met.
+type CsrAndQuoteResponseMultiError []error
+
+// Error returns a concatenation of all the error messages it wraps.
+func (m CsrAndQuoteResponseMultiError) Error() string {
+	var msgs []string
+	for _, err := range m {
+		msgs = append(msgs, err.Error())
+	}
+	return strings.Join(msgs, "; ")
+}
+
+// AllErrors returns a list of validation violation errors.
+func (m CsrAndQuoteResponseMultiError) AllErrors() []error { return m }
+
+// CsrAndQuoteResponseValidationError is the validation error returned by
+// CsrAndQuoteResponse.Validate if the designated constraints aren't met.
+type CsrAndQuoteResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e CsrAndQuoteResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e CsrAndQuoteResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e CsrAndQuoteResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e CsrAndQuoteResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e CsrAndQuoteResponseValidationError) ErrorName() string {
+	return "CsrAndQuoteResponseValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e CsrAndQuoteResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sCsrAndQuoteResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = CsrAndQuoteResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = CsrAndQuoteResponseValidationError{}
+
 // Validate checks the field values on SdsDummy with the rules defined in the
 // proto definition for this message. If any rules are violated, the first
 // error encountered is returned, or nil if there are no violations.
