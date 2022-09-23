@@ -180,6 +180,10 @@ type server struct {
 	delta delta.Server
 }
 
+func (s *server) SendCsrAndQuote(secretservice.SecretDiscoveryService_SendCsrAndQuoteServer) error {
+	return nil
+}
+
 func (s *server) StreamHandler(stream stream.Stream, typeURL string) error {
 	return s.sotw.StreamHandler(stream, typeURL)
 }
