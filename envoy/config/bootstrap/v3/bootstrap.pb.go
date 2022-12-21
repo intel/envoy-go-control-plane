@@ -329,9 +329,8 @@ type Bootstrap struct {
 	DefaultSocketInterface string `protobuf:"bytes,24,opt,name=default_socket_interface,json=defaultSocketInterface,proto3" json:"default_socket_interface,omitempty"`
 	// Global map of CertificateProvider instances. These instances are referred to by name in the
 	// :ref:`CommonTlsContext.CertificateProviderInstance.instance_name
-	// <envoy_v3_api_field_extensions.transport_sockets.tls.v3.CommonTlsContext.CertificateProviderInstance.instance_name>`
+	// <envoy_v3_api_field_extensions.transport_sockets.tls.v3.CertificateProviderPluginInstance.instance_name>`
 	// field.
-	// [#not-implemented-hide:]
 	CertificateProviderInstances map[string]*v3.TypedExtensionConfig `protobuf:"bytes,25,rep,name=certificate_provider_instances,json=certificateProviderInstances,proto3" json:"certificate_provider_instances,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	// Specifies a set of headers that need to be registered as inline header. This configuration
 	// allows users to customize the inline headers on-demand at Envoy startup without modifying

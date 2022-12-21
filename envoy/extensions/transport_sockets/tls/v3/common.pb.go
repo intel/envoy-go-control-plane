@@ -634,7 +634,6 @@ func (x *TlsSessionTicketKeys) GetKeys() []*v3.DataSource {
 // The plugin instances are defined in the client's bootstrap file.
 // The plugin allows certificates to be fetched/refreshed over the network asynchronously with
 // respect to the TLS handshake.
-// [#not-implemented-hide:]
 type CertificateProviderPluginInstance struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -801,8 +800,7 @@ type CertificateValidationContext struct {
 	TrustedCa *v3.DataSource `protobuf:"bytes,1,opt,name=trusted_ca,json=trustedCa,proto3" json:"trusted_ca,omitempty"`
 	// Certificate provider instance for fetching TLS certificates.
 	//
-	// Only one of ``trusted_ca`` and ``ca_certificate_provider_instance`` may be specified.
-	// [#not-implemented-hide:]
+	// Only one of *trusted_ca* and *ca_certificate_provider_instance* may be specified.
 	CaCertificateProviderInstance *CertificateProviderPluginInstance `protobuf:"bytes,13,opt,name=ca_certificate_provider_instance,json=caCertificateProviderInstance,proto3" json:"ca_certificate_provider_instance,omitempty"`
 	// If specified, updates of a file-based ``trusted_ca`` source will be triggered
 	// by this watch. This allows explicit control over the path watched, by
